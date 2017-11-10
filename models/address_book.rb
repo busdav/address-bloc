@@ -3,7 +3,7 @@ require_relative 'entry'
 require "csv"
 
 
-  class AddressBook
+class AddressBook
     attr_reader :entries
 
     def initialize
@@ -58,4 +58,15 @@ require "csv"
      # #5
      return nil
    end
+   
+  def iterative_search(name)
+    
+    entries.each do |entry|
+      if entry.name == name
+        return entry
+      end
+    end 
+  
+    return nil
+  end
 end
